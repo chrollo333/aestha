@@ -1,0 +1,7 @@
+#This will be used to install all dependancies required for this project later
+
+Flask
+Flask-SQLAlchemy
+Flask-Migrate
+Flask-CORS
+psycopg2
