@@ -14,10 +14,10 @@ const LikeButton = ({ liked, likes, onClick, isLoggedIn}) => {
     };
 
     return (
-        <div className="like-button-container" onClick={onClick}>
+        <div className="like-button-container">
             <img
                 src={liked ? emptyHeartIcon : fullHeartIcon}
-                className="like-button-icon"
+                className="like-button-icon" onClick={handleClick}
             />
             <span className="like-counter">{likes}</span>
         </div>

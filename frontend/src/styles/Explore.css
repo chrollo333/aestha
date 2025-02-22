@@ -1,3 +1,5 @@
+
+
 .page-container{
     display:flex;
     justify-content: center;
@@ -7,11 +9,11 @@
     grid-template-columns: repeat(1fr);
     gap: 16px;
     justify-content: center;
-    padding-top:10vh;
+    padding-top:6vh;
     padding-bottom:15vh;
     width: 60%;
 }
-.outfit-item {
+.outfit-item{
     overflow: hidden;
     text-align: center;
     transition: transform 1s ease-in-out;
@@ -21,6 +23,9 @@
     height: auto;
 }
 
+.outfit-item:hover{
+    transform: transition scale(1.1);
+}
 .outfit-item img {
     width: 100%;
     display:block;
@@ -31,12 +36,13 @@
     align-items: center;
     justify-content: center;
     margin-top: 8px;
-    background-color:aqua;
+    background-color:rgb(60, 71, 71);
     position:absolute;
     bottom: 8px; /* Position the container 8px from the bottom */
     left: 8px; /* Position the container 8px from the left */
     border-radius: 5rem;
     padding: 0.5rem 1rem;
+    opacity: 0.8;
 }
 
 .like-button-icon {
@@ -48,7 +54,9 @@
 
 .like-counter {
     font-size: 1rem;
-    color: black;
+    color: rgb(255, 255, 255);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 2.6vh;
 }
 
 @media (max-width: 768px) {

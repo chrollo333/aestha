@@ -6,6 +6,7 @@ import LikeButton from "../components/LikeButton";
 const Explore = () => {
     const [outfits, setOutfits] = useState ([]);
     const [likedOutfits, setLikedOutfits] = useState(new Set());
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
 
     useEffect(() => {
         const fetchOutfits = async () => {
@@ -61,6 +62,7 @@ return (
                             liked={likedOutfits.has(outfit.id)}
                             likes={outfit.likes}
                             onClick={() => handleLike(outfit.id)}
+                            isLoggedIn={isLoggedIn}
                             />
                     </div>
                 ))}

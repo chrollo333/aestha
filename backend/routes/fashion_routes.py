@@ -1,3 +1,6 @@
+#this route handles fetching outfits from the unsplash API and storing them into the database 
+#plus it also handles the functionality for the outfits (users liking them)
+
 from flask import Blueprint, jsonify, current_app
 from models import db, Outfit
 from dotenv import load_dotenv
