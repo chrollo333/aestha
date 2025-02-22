@@ -1,12 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import "../styles/Explore.css";
-import { motion, useScroll, useTransform } from "framer-motion";
 import Navbar from "../components/Navbar";
-
+import LikeButton from "../components/LikeButton";
 
 const Explore = () => {
     const [outfits, setOutfits] = useState ([]);
-
+    const [likedOutfits, setLikedOutfits] = useState(new Set());
 
     useEffect(() => {
         const fetchOutfits = async () => {
@@ -26,7 +25,11 @@ const Explore = () => {
         fetchOutfits();
     }, []);
 
-    const handleLike = async (outfitId) => { //This function handles likes based on outfitID
+    const handleLike = async (outfitId) => { //This handles likes based on outfitID
+        if (likedOutfits.has(outfitId)) {
+            return; // Does nothing if user has already liked this outfit
+        }
+
         try {
             const response = await fetch(`http://localhost:5000/api/fashion/outfits/${outfitId}/like`, {
                 method: "POST",
@@ -38,6 +41,7 @@ const Explore = () => {
                         outfit.id === outfitId ? { ...outfit, likes: data.likes} : outfit
                     )
                 );
+                setLikedOutfits((prevLikedOutfits) => new Set(prevLikedOutfits).add(outfitId));
             } else {
                 console.error("Error liking outfit", data.error);
             }
@@ -53,7 +57,11 @@ return (
                 {outfits.map((outfit) => (
                     <div key={outfit.id} className="outfit-item">
                         <img src={outfit.image_url} alt={outfit.source} />
-                        <button onClick={() => handleLike(outfit.id)}>Like ({outfit.likes})</button>
+                        <LikeButton
+                            liked={likedOutfits.has(outfit.id)}
+                            likes={outfit.likes}
+                            onClick={() => handleLike(outfit.id)}
+                            />
                     </div>
                 ))}
             </div>

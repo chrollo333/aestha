@@ -1,42 +1,54 @@
 .page-container{
     display:flex;
     justify-content: center;
-
 }
 .outfit-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1fr);
     gap: 16px;
     justify-content: center;
-    padding: 16px;
     padding-top:10vh;
-    padding-bottom: 15vh;
-}
-.outfit-item:hover{
-    transform: scale(1.1)
+    padding-bottom:15vh;
+    width: 60%;
 }
 .outfit-item {
     overflow: hidden;
     text-align: center;
-    transition: transform 1s ease-in-out
+    transition: transform 1s ease-in-out;
+    position: relative; 
+    display: inline-block;
+    width:100;
+    height: auto;
 }
 
 .outfit-item img {
     width: 100%;
+    display:block;
 }
 
-.outfit-item button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    border-radius: 4px;
+.like-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 8px;
+    background-color:aqua;
+    position:absolute;
+    bottom: 8px; /* Position the container 8px from the bottom */
+    left: 8px; /* Position the container 8px from the left */
+    border-radius: 5rem;
+    padding: 0.5rem 1rem;
 }
 
-.outfit-item button:hover {
-    background-color: #0056b3;
+.like-button-icon {
+    cursor:pointer;
+    width: 2vh;
+    height: 2vh;
+    margin-right: 0.5rem;
+}
+
+.like-counter {
+    font-size: 1rem;
+    color: black;
 }
 
 @media (max-width: 768px) {
