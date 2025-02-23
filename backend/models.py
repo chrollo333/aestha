@@ -10,6 +10,10 @@ class User(db.Model):
     username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password_hash = db.Column(db.String(128), nullable=False)
+    profile_picture = db.Column(db.String(255), default="default.jpg")
+    login_attempts = db.Column(db.Integer, default=0)
+    created_at = db.Column(db.DateTime, default=datetime.now(timezone.utc))
+    updated_at = db.Column(db.DateTime, default=datetime.now(timezone.utc), onupdate=datetime.now(timezone.utc))
     
 class Outfit(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -18,7 +22,7 @@ class Outfit(db.Model):
     likes = db.Column(db.Integer, default=0) #Used for likes on outfit posts
     date_added = db.Column(db.DateTime, default=datetime.now(timezone.utc)) #Datetime based on the UTC timezone
     
-    def to_dict(self): #this is later used to send to an API endpoint, mostly to display the outfit data with React (JSON data required)
+    def to_dict(self): #this is later used to send to an API endpoint, to display the outfit data with React (JSON data required)
         return {
             "id": self.id,
             "image_url": self.image_url,

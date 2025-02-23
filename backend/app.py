@@ -8,9 +8,8 @@ from flask_cors import CORS
 import os
 from models import db,User,Outfit,UserLikes
 from routes.fashion_routes import fashion_bp, fetch_outfits
-#importing routes (blueprints)
-# from routes.auth_routes import auth_bp
-# from routes.fashion_routes import fashion_bp
+from routes.auth_routes import auth_bp
+
 
 app = Flask(__name__, static_folder="../frontend/build", static_url_path="/")
 app.config.from_object("config.Config")
@@ -24,7 +23,7 @@ CORS(app)  # Allow frontend requests
 
 
 # This is used to register blueprints
-# app.register_blueprint(auth_bp, url_prefix="/api/auth")
+app.register_blueprint(auth_bp, url_prefix="/api/auth")
 app.register_blueprint(fashion_bp, url_prefix="/api/fashion")
 
 # Fetch outfits on startup
