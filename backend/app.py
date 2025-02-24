@@ -6,20 +6,25 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_cors import CORS
 import os
-from models import db,User,Outfit,UserLikes
+from models import db, User, Outfit, UserLikes
 from routes.fashion_routes import fashion_bp, fetch_outfits
 from routes.auth_routes import auth_bp
+from dotenv import load_dotenv
+
+
+load_dotenv()
+
 
 
 app = Flask(__name__, static_folder="../frontend/build", static_url_path="/")
 app.config.from_object("config.Config")
 
-# Print the database URI to verify
+# Prints the database URI to verify
 print("Database URI:", app.config['SQLALCHEMY_DATABASE_URI'])
-# Initialize extensions
+# Initializes extensions
 db.init_app(app)
 migrate = Migrate(app, db)
-CORS(app)  # Allow frontend requests
+CORS(app)  # Allows frontend requests
 
 
 # This is used to register blueprints
@@ -40,19 +45,6 @@ def serve_react_app():
 def success(name):
     return f"Hello {name}"
 
-@app.route("/api/login", methods=["POST"])
-def login():
-    try:    #Catching exceptions
-            data = request.get_json() #Used to get JSON data from react
-            user = data.get("nm")
-            if user:
-                return jsonify({"message": "Success!", "name": user})
-            else:
-                return jsonify({"error": "No name provided"}), 400
-    except Exception as e:
-        app.logger.error(f"Error occurred: {e}")
-        return jsonify({"error": "Internal Server Error"}), 500
-    
     
 @app.route('/<path:path>')
 def serve_static_files(path):

@@ -6,7 +6,7 @@ import LikeButton from "../components/LikeButton";
 const Explore = () => {
     const [outfits, setOutfits] = useState ([]);
     const [likedOutfits, setLikedOutfits] = useState(new Set());
-    const [isLoggedIn, setIsLoggedIn] = useState(true);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
         const fetchOutfits = async () => {
