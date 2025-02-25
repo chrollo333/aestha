@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import styles from "../components/Modal.module.css";
 
 const RegisterModal = ({ isOpen, onClose, onRegister }) => {
     const [email, setEmail] = useState("");
@@ -28,9 +28,9 @@ if (!isOpen) return null;
 
 
 return (
-    <div className="modal-container">
-        <div className="modal-content">
-            <button onClick={ onClose } className="close-button">X</button>
+    <div className={styles.modalContainer}>
+        <div className={styles.modalContent}>
+            <button onClick={ onClose } className={styles.closeButton}>X</button>
             <h2>Register</h2>
             <form onSubmit={ handleSubmit }>
                 <input type="text" value={ username } onChange={(e) => setUsername(e.target.value)} placeholder="Username"/>

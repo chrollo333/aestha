@@ -10,6 +10,11 @@ body {
     background-color: black;
 }
 
+.blurred-background {
+  filter: blur(5px); /* Adjust the blur amount as needed */
+  pointer-events: none; /* Prevent interactions with blurred elements */
+}
+
 .intro-section{
     height: 100vh; /* Full viewport height */
     display: flex;

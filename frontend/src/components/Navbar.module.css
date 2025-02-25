@@ -15,12 +15,16 @@
 .navbar span{
     pointer-events:none;
 }
-.navbar a {
+.navbar a{
     text-decoration: none;
     color: white;
     font-size: 1rem;
     padding: 0.5rem 1rem;
     transition: color 0.3s ease-in-out;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar button{
+
 }
 
