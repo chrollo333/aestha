@@ -1,0 +1,67 @@
+.newsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    padding: 1rem;
+    width: 60%;
+    justify-content:center;
+    margin: 0 auto;
+    padding-top:6vh;
+    padding-bottom:15vh;
+}
+
+.newsCard {
+    background-color: black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+    font-family:'Times New Roman', Times, serif, Verdana, sans-serif;
+}
+
+.newsCard:hover {
+    transform: scale(1.05);
+}
+
+.newsCard a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.newsCard h3 {
+    color:white;
+    font-size: 1.75rem;
+    margin: 0.5rem;
+}
+
+.newsCard p {
+    color:white;
+    font-size: 1rem;
+    margin: 0.5rem;
+}
+
+.newsCard img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/*so my content works properly on phones */
+@media (max-width: 768px) {
+    .newsGrid {
+        width: 90%; 
+        grid-template-columns: 1fr; 
+    }
+
+    .newsCard {
+        font-size: 0.875rem; 
+        padding: 0.5rem; 
+    }
+
+    .newsCard h3 {
+        font-size: 1rem; 
+    }
+
+    .newsCard p {
+        font-size: 0.875rem; 
+    }
+}

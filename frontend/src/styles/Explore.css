@@ -41,8 +41,8 @@
     margin-top: 8px;
     background-color:rgb(60, 71, 71);
     position:absolute;
-    bottom: 8px; /* Position the container 8px from the bottom */
-    left: 8px; /* Position the container 8px from the left */
+    bottom: 8px; 
+    left: 8px; 
     border-radius: 5rem;
     padding: 0.5rem 1rem;
     opacity: 0.8;
@@ -62,22 +62,24 @@
     height: 2.6vh;
 }
 
+/*so my content works properly on phones */
+
 @media (max-width: 768px) {
     .outfit-grid-container {
-        width: 80%; /* Adjust width for tablets */
+        width: 80%; 
     }
 
     .outfit-grid {
-        grid-template-columns: 1fr; /* 1 photo per row on smaller screens */
+        grid-template-columns: 1fr; 
     }
 }
 
 @media (max-width: 480px) {
     .outfit-grid-container {
-        width: 90%; /* Adjust width for mobile devices */
+        width: 90%; 
     }
 
     .outfit-grid {
-        grid-template-columns: 1fr; /* 1 photo per row on smaller screens */
+        grid-template-columns: 1fr;
     }
 }

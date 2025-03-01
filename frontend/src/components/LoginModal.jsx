@@ -34,10 +34,18 @@ return (
     <div className={styles.modalContainer}>
         <div className={styles.modalContent}>
             <button onClick={onClose} className={styles.closeButton}>X</button>
-            <h2>Login</h2>
+            <h2>LOGIN</h2>
             <form onSubmit={handleSubmit}>
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
+                <input 
+                type="email" 
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)} 
+                placeholder="Email" />
+                <input 
+                type="password" 
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)} 
+                placeholder="Password" />
                 <button type="submit">Login</button>
             </form>
         </div>

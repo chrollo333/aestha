@@ -11,12 +11,12 @@ body {
 }
 
 .blurred-background {
-  filter: blur(5px); /* Adjust the blur amount as needed */
-  pointer-events: none; /* Prevent interactions with blurred elements */
+  filter: blur(5px); 
+  pointer-events: none; 
 }
 
 .intro-section{
-    height: 100vh; /* Full viewport height */
+    height: 100vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,8 +49,8 @@ body {
 }
 .button-container {
     display: flex;
-    justify-content: center;  /* Centers horizontally */
-    align-items: center;      /* Centers vertically */
+    justify-content: center;  
+    align-items: center;      
     height: 20vh;
   }
 
@@ -67,9 +67,9 @@ body {
 
     justify-content: center;
     padding: 5rem 10%;
-    margin: 0 auto; /* Centers block properly */
-    width: 100%; /* Ensures full width for proper centering */
-    max-width: 60vw; /* Prevents text from stretching too wide */
+    margin: 0 auto; 
+    width: 100%; 
+    max-width: 60vw; 
 
 }
 

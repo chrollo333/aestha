@@ -31,7 +31,7 @@ return (
     <div className={styles.modalContainer}>
         <div className={styles.modalContent}>
             <button onClick={ onClose } className={styles.closeButton}>X</button>
-            <h2>Register</h2>
+            <h2>REGISTER</h2>
             <form onSubmit={ handleSubmit }>
                 <input type="text" value={ username } onChange={(e) => setUsername(e.target.value)} placeholder="Username"/>
                 <input type="email" value={ email } onChange={(e) => setEmail(e.target.value)} placeholder="E-mail"/>
