@@ -7,18 +7,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.7); /* Darker semi-transparent backdrop */
+    background: rgba(0, 0, 0, 0.7); 
     z-index: 1000;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .modalContent {
-    background: #111; /* Dark background for the modal */
+    background: #111; 
     color: white;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-    border: 1px solid #333; /* Subtle border to distinguish it */
+    border: 1px solid #333; 
     z-index: 1001;
     position: relative;
     width: 90%;

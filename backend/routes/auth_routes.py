@@ -8,7 +8,7 @@ from config import Config
 
 
 auth_bp = Blueprint('auth', __name__)
-SECRET_KEY = Config.SECRET_KEY  # Access the SECRET_KEY from the Config class
+SECRET_KEY = Config.SECRET_KEY  
 
 
 
@@ -17,7 +17,7 @@ def register():
     try:
         data = request.json
         
-        #Getting data from request, if a field is missing, throw an error
+       
         if not data.get("username") or not data.get("email") or not data.get("password"):
             return jsonify({"error": "Missing required fields"}), 400
         

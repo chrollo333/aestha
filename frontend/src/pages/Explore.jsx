@@ -19,7 +19,7 @@ const Explore = ({ isLoggedIn }) => {
                 console.log("Fetched outfits:", data); //Debugging test to see what data got fetched
                 setOutfits(data);
             } catch (error) {
-                console.error("Failed fetching outfits:", error); //If fetching outfit data fails, this will report an error
+                console.error("Failed fetching outfits:", error); 
             }
         };
 
@@ -32,7 +32,7 @@ const Explore = ({ isLoggedIn }) => {
             return;
         }
     
-        const token = localStorage.getItem("token"); // Get token from local storage
+        const token = localStorage.getItem("token"); // gets token from local storage
     
         if (!token) {
             alert("You must be logged in to like outfits.");
@@ -40,10 +40,10 @@ const Explore = ({ isLoggedIn }) => {
         }
     
         if (likedOutfits.has(outfitId)) {
-            // Unlike the outfit (DELETE request)
+            // unlike the outfit
             try {
                 const response = await fetch(`http://localhost:5000/api/fashion/outfits/${outfitId}/unlike`, {
-                    method: "DELETE", // Use DELETE method as per updated Flask route
+                    method: "DELETE",
                     headers: {
                         "Authorization": `Bearer ${token}`,
                         "Content-Type": "application/json"
